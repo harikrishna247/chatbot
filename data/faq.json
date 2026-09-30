@@ -1,0 +1,94 @@
+{
+  "intents": [
+    {
+      "intent": "exam_dates",
+      "patterns": ["When are the semester exams?", "What are the exam dates?", "When do exams start?", "Semester examination schedule"],
+      "answer": "The semester examination dates are available in the academic calendar."
+    },
+    {
+      "intent": "timetable",
+      "patterns": ["Where can I get the exam timetable?", "When will the timetable be released?", "Exam time table", "Exam schedule for my department"],
+      "answer": "The exam timetable is published on the college website and notice board about 3 weeks before the exams."
+    },
+    {
+      "intent": "hall_ticket",
+      "patterns": ["How can I download my hall ticket?", "Where do I get the admit card?", "I lost my hall ticket", "Hall ticket not showing in portal"],
+      "answer": "Log in to the student portal and download your hall ticket from the Examinations section. If it is missing, contact the examination office."
+    },
+    {
+      "intent": "attendance",
+      "patterns": ["What is the minimum attendance for exams?", "Attendance required to write exams", "Am I eligible for exam with low attendance?", "Attendance shortage"],
+      "answer": "You need at least 75% attendance to be eligible for the semester exams."
+    },
+    {
+      "intent": "passing_marks",
+      "patterns": ["What is the passing mark?", "Minimum marks to pass a subject", "How many marks are needed to pass?", "Pass criteria"],
+      "answer": "You need at least 40% in the semester exam and 50% overall (internal + external) to pass a subject."
+    },
+    {
+      "intent": "results",
+      "patterns": ["When will the results be published?", "How do I check my exam result?", "Result date", "Where can I see my marks?"],
+      "answer": "Results are usually published within 30 days after the last exam on the student portal."
+    },
+    {
+      "intent": "revaluation",
+      "patterns": ["How do I apply for revaluation?", "Can I apply for re-totaling?", "I want to recheck my answer paper", "Revaluation fee and last date"],
+      "answer": "Apply through the student portal within 7 days of result publication and pay the revaluation fee."
+    },
+    {
+      "intent": "arrear_exam",
+      "patterns": ["How do I apply for arrear exams?", "Supplementary exam registration", "I failed a subject, what should I do?", "Backlog exam application"],
+      "answer": "Register for arrear exams on the student portal before the last date given in the exam notification."
+    },
+    {
+      "intent": "exam_fee",
+      "patterns": ["What is the exam fee?", "How do I pay the exam fee?", "Last date to pay exam fee", "Exam form last date"],
+      "answer": "The exam fee is paid online through the student portal before the exam form deadline. A late fee applies after the deadline."
+    },
+    {
+      "intent": "internal_marks",
+      "patterns": ["How are internal marks calculated?", "What is CIA?", "Internal assessment marks", "Internal test details"],
+      "answer": "Internal marks are based on two internal tests, assignments and attendance."
+    },
+    {
+      "intent": "exam_hall_rules",
+      "patterns": ["What can I carry into the exam hall?", "Are mobile phones allowed in the exam?", "Is a calculator allowed?", "Exam hall rules"],
+      "answer": "Only your hall ticket, college ID card, pen and an approved calculator are allowed. Mobile phones and smartwatches are not allowed."
+    },
+    {
+      "intent": "missed_exam",
+      "patterns": ["I missed my exam due to illness", "What if I miss an exam?", "Re-exam for medical reasons", "Absent for exam"],
+      "answer": "Submit a medical certificate to the Controller of Examinations within 3 days to apply for a re-exam."
+    },
+    {
+      "intent": "mark_sheet",
+      "patterns": ["How can I get my mark sheet?", "Provisional certificate application", "Where do I collect my marksheet?", "Duplicate mark sheet"],
+      "answer": "Apply at the examination office or through the student portal. Mark sheets are issued after results are published."
+    },
+    {
+      "intent": "malpractice",
+      "patterns": ["What is the punishment for cheating in exams?", "Malpractice penalty", "What happens if I copy in the exam?", "Exam malpractice rules"],
+      "answer": "Malpractice can lead to cancellation of the exam and a ban from further exams, as decided by the disciplinary committee."
+    },
+    {
+      "intent": "practical_exam",
+      "patterns": ["When are practical exams?", "Lab exam dates", "Are there practical exams?", "Record submission for lab exam"],
+      "answer": "Practical exams are held before the theory exams. The dates are given in the exam timetable."
+    },
+    {
+      "intent": "exam_office",
+      "patterns": ["Where is the examination office?", "Examination office timings", "Contact the controller of examinations", "Exam cell contact"],
+      "answer": "The examination office is in the administrative block and is open from 9:30 AM to 4:30 PM on working days."
+    },
+    {
+      "intent": "bonafide",
+      "patterns": ["How can I apply for a bonafide certificate?", "Bonafide certificate", "I need a bonafide letter"],
+      "answer": "You can apply through the student portal or contact the academic office."
+    },
+    {
+      "intent": "library",
+      "patterns": ["What are the library timings?", "When does the library open?", "Library hours"],
+      "answer": "The library is open from 8:00 AM to 6:00 PM on working days."
+    }
+  ]
+}

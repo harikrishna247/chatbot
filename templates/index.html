@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>College Exam FAQ Chatbot</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #eef1f6; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .chat { width: 100%; max-width: 480px; height: 90vh; background: #fff; border-radius: 12px; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(0,0,0,.15); overflow: hidden; }
+    .header { background: #2c4a8a; color: #fff; padding: 16px; font-size: 18px; font-weight: bold; }
+    .messages { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+    .msg { max-width: 80%; padding: 10px 14px; border-radius: 14px; line-height: 1.4; font-size: 15px; }
+    .bot { background: #e8ecf5; align-self: flex-start; }
+    .user { background: #2c4a8a; color: #fff; align-self: flex-end; }
+    .chips { padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid #eee; }
+    .chip { background: #fff; border: 1px solid #2c4a8a; color: #2c4a8a; border-radius: 16px; padding: 5px 12px; font-size: 13px; cursor: pointer; }
+    .chip:hover { background: #2c4a8a; color: #fff; }
+    .input { display: flex; border-top: 1px solid #eee; }
+    .input input { flex: 1; border: none; padding: 14px; font-size: 15px; outline: none; }
+    .input button { border: none; background: #2c4a8a; color: #fff; padding: 0 20px; font-size: 15px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="chat">
+    <div class="header">College Exam FAQ Chatbot</div>
+    <div class="messages" id="messages">
+      <div class="msg bot">Hi! Ask me anything about examinations.</div>
+    </div>
+    <div class="chips">
+      <span class="chip">When are the semester exams?</span>
+      <span class="chip">How can I download my hall ticket?</span>
+      <span class="chip">Minimum attendance for exams?</span>
+      <span class="chip">How do I apply for revaluation?</span>
+      <span class="chip">When will the results be published?</span>
+    </div>
+    <div class="input">
+      <input id="box" placeholder="Type your question..." autocomplete="off">
+      <button id="send">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const messages = document.getElementById("messages");
+    const box = document.getElementById("box");
+
+    function addMessage(text, who) {
+      const div = document.createElement("div");
+      div.className = "msg " + who;
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    async function send(text) {
+      text = text.trim();
+      if (!text) return;
+      addMessage(text, "user");
+      box.value = "";
+      const res = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
+      });
+      const data = await res.json();
+      addMessage(data.answer, "bot");
+    }
+
+    document.getElementById("send").onclick = () => send(box.value);
+    box.addEventListener("keydown", e => { if (e.key === "Enter") send(box.value); });
+    document.querySelectorAll(".chip").forEach(c => c.onclick = () => send(c.textContent));
+  </script>
+</body>
+</html>
